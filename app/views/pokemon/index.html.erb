@@ -1,0 +1,20 @@
+<% @pokemon.in_groups_of(3, false).each do |pokes| %>
+  <div class="row">
+    <% pokes.each do |poke| %>
+      <div class="small-4 large-4 columns text-center">
+        <div class="panel hvr-underline-from-center ">
+          <a href = <%= poke["url"]%> >
+            <%=image_tag('' + poke["name"] + '.png', size: "100x100", alt:poke["name"])  %>
+          </a>
+          <br>
+          <%=poke["name"].titlecase%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <br>
+<% end %>
+
+<div class="text-center">
+  <%= will_paginate @pokemon, renderer: FoundationPagination::Rails %>
+</div>

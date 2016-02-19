@@ -1,0 +1,2 @@
+class BerriesController < ApplicationController
+end
